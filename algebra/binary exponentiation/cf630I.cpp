@@ -65,11 +65,11 @@ ull binp(ull x, ull y) {
 }
 
 void solve() {
-	/*
-		case 1: at 2 boundaries. 4 choices of first make, 3 choices of adjacent make, 
-		4^(m - (1 + 2)) choices of rest makes
-		case 2: at somewhere in the middle. 4 * (2m - 1 - (m - 1)) choices of middle make, 
-		3^2 choices of adjacent makes, 4^(m - (2 + 2)) choices of rest makes
+    /*
+	case 1: at 2 boundaries. 4 choices of first make, 3 choices of adjacent make, 
+	4^(m - (1 + 2)) choices of rest makes
+	case 2: at somewhere in the middle. 4 * (2m - 1 - (m - 1)) choices of middle make, 
+	3^2 choices of adjacent makes, 4^(m - (2 + 2)) choices of rest makes
     */
     int m; scan(m);
     int choice_of_first_middle_make = (m << 1) - 2 - (m - 1);
