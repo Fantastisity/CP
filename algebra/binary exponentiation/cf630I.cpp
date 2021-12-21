@@ -74,7 +74,7 @@ void solve() {
     int m; scan(m);
     int choice_of_first_middle_make = (m << 1) - 2 - (m - 1);
     ull res = ((3 * binp(4, m - 3)) << 3) + 
-    		  ((choice_of_first_middle_make * 9 * binp(4, m - 4)) << 2);
+    	      ((choice_of_first_middle_make * 9 * binp(4, m - 4)) << 2);
     dbg(res);
 }
 
