@@ -81,5 +81,5 @@ void solve() {
 
 int main() {
     while (scan2(n, k) && n && k) solve();
-    return 1;
+    return 0;
 }
