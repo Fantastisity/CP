@@ -99,7 +99,7 @@ void append(int r, int c, int n) {
 }
 
 void solve() {
-	solver.init(324);
+    solver.init(324);
     FE(i, 1, 9) FE(j, 1, 9) {
     		scan(blk[i][j]);
     		FE(n, 1, 9) {
