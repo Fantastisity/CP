@@ -71,8 +71,6 @@ void solve() {
 }
 
 int main() {
-    freopen("/home/drac/Documents/CP/input.txt", "r", stdin);
-    setbuf(stdout, NULL);
-    freopen("/home/drac/Documents/CP/output.txt", "w", stdout);
     solve();
+    return 1;
 }
