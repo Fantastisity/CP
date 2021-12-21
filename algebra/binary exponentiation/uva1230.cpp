@@ -76,6 +76,5 @@ int main() {
     setbuf(stdout, NULL);
     freopen("/home/drac/Documents/CP/output.txt", "w", stdout);
     int n; scan(n);
-    while (n--)
-        solve();
+    while (n--) solve();
 }
