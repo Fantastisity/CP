@@ -83,7 +83,5 @@ int main() {
     freopen("/home/drac/Documents/CP/input.txt", "r", stdin);
     setbuf(stdout, NULL);
     freopen("/home/drac/Documents/CP/output.txt", "w", stdout);
-    while (scan2(n, k) && n && k) {
-    	solve();
-    }
+    while (scan2(n, k) && n && k) solve();
 }
