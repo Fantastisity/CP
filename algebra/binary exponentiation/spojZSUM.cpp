@@ -80,8 +80,6 @@ void solve() {
 }
 
 int main() {
-    freopen("/home/drac/Documents/CP/input.txt", "r", stdin);
-    setbuf(stdout, NULL);
-    freopen("/home/drac/Documents/CP/output.txt", "w", stdout);
     while (scan2(n, k) && n && k) solve();
+    return 1;
 }
