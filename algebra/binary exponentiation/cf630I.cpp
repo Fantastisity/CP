@@ -82,5 +82,5 @@ int main() {
     int n;
     scan(n);
     while (n--) solve();
-    return 1;
+    return 0;
 }
