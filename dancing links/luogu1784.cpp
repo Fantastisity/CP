@@ -116,5 +116,5 @@ void solve() {
 
 int main() {
     solve();
-    return 1;
+    return 0;
 }
