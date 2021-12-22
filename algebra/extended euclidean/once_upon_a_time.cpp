@@ -141,7 +141,7 @@ int Gcd_Ext() {
 }
 
 int main() {
-	int res;
+    int res;
     while (scan4(n, m, a, k) && n && m && a && k) {
     	if ((res = Gcd_Ext()) == -1) dbg("Impossible");
     	else dbg(res);
