@@ -128,7 +128,7 @@ int main() {
     	/*
 			Linear Diophantine ax + by = c:
 				1) single solution: x0 = x * c / gcd(x, y), y0 = y * c / gcd(x, y)
-				2) rest solutions: xn = x0 + k * b / gcd(x, y), yn = y0 + k * a / gcd(x, y)
+				2) rest solutions: xn = x0 + k * b / gcd(x, y), yn = y0 - k * a / gcd(x, y)
 			since xn, yn >= 0, thus ceil(-x0 * gcd(x, y) / b) <= k <= floor(y0 * gcd(x, y) / a)
     	*/
     	for (int j = 0; j <= p; j += c) {
