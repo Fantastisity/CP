@@ -63,9 +63,9 @@ struct dlx {
 		if (!c) {
 			F(i, 1, k) {
 				int x = (ans[i] - 1) / 9 / 9 + 1;
-		        int y = (ans[i] - 1) / 9 % 9 + 1;
-		        int v = (ans[i] - 1) % 9 + 1;
-		        blk[x][y] = v;
+		        	int y = (ans[i] - 1) / 9 % 9 + 1;
+		        	int v = (ans[i] - 1) % 9 + 1;
+		        	blk[x][y] = v;
 			}
 			return 1;
 		}
