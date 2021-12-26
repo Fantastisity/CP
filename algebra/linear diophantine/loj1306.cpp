@@ -180,11 +180,8 @@ int main() {
 
 	if (rx2 < lx2) swap(rx2, lx2);
 	lx = max(lx1, lx2), rx = min(rx1, rx2);
-	if (lx > rx) {
-		cout << "Case " << i << ": " << 0 << endl;
-    		continue;
-	}
-	cout << "Case " << i << ": " << (rx - lx) / abs(b) + 1 << endl;
+	if (lx > rx) cout << "Case " << i << ": " << 0 << endl;
+	else cout << "Case " << i << ": " << (rx - lx) / abs(b) + 1 << endl;
     }
     return 0;
 }
