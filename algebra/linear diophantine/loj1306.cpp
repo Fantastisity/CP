@@ -141,13 +141,13 @@ int main() {
 
     	if (!a) {
     		cout << "Case " << i << ": " << ((c % b || ly > c / b || ry < c / b) ? 
-    		    										  0 : rx - lx + 1) << endl;
+    		    				  0 : rx - lx + 1) << endl;
     		continue;
     	}
 
     	if (!b) {
     		cout << "Case " << i << ": " << ((c % a || lx > c / a || rx < c / a) ? 
-    		    										  0 : ry - ly + 1) << endl;
+    		    				  0 : ry - ly + 1) << endl;
     		continue;
     	}
 
@@ -163,28 +163,28 @@ int main() {
     		continue;
     	}
     	lx1 = x;
-		calc(x, y, (rx - x) / b, a, b);
-		if (x > rx) calc(x, y, -sign_b, a, b);
-		rx1 = x;
+	calc(x, y, (rx - x) / b, a, b);
+	if (x > rx) calc(x, y, -sign_b, a, b);
+	rx1 = x;
 
-		calc(x, y, (y - ly) / a, a, b);
+	calc(x, y, (y - ly) / a, a, b);
     	if (y < ly) calc(x, y, -sign_a, a, b);
     	if (y > ry) {
     		cout << "Case " << i << ": " << 0 << endl;
     		continue;
     	}
     	lx2 = x;
-		calc(x, y, (y - ry) / a, a, b);
-		if (y > ry) calc(x, y, sign_a, a, b);
-		rx2 = x;
+	calc(x, y, (y - ry) / a, a, b);
+	if (y > ry) calc(x, y, sign_a, a, b);
+	rx2 = x;
 
-		if (rx2 < lx2) swap(rx2, lx2);
-		lx = max(lx1, lx2), rx = min(rx1, rx2);
-		if (lx > rx) {
-			cout << "Case " << i << ": " << 0 << endl;
+	if (rx2 < lx2) swap(rx2, lx2);
+	lx = max(lx1, lx2), rx = min(rx1, rx2);
+	if (lx > rx) {
+		cout << "Case " << i << ": " << 0 << endl;
     		continue;
-		}
-		cout << "Case " << i << ": " << (rx - lx) / abs(b) + 1 << endl;
+	}
+	cout << "Case " << i << ": " << (rx - lx) / abs(b) + 1 << endl;
     }
     return 0;
 }
