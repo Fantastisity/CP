@@ -114,25 +114,19 @@ bool comp[10000000];
 ll square[10000000], sum[10000000];
 
 void init() {
-	square[0] = 0, square[1] = 1;
+	square[1] = 1;
 	for (ll i = 2; i < 10000000; ++i) {
 		if (i * i < 10000000) square[i * i] = 1;
-		if (!comp[i]) {
-			for (ll j = i * i; j < 10000000; j += i) {
-				comp[j] = 1;
-			}
-		}
+		if (!comp[i]) for (ll j = i * i; j < 10000000; j += i) comp[j] = 1;	
 	}
-	sum[0] = 0;
 	for (ll i = 1, tmp; i < 10000000; ++i) {
 		sum[i] = sum[i - 1];
 		if (comp[i]) continue;
-		for (ll j = 1; (tmp = j * j * j * j) <= i; ++j) {
+		for (ll j = 1; (tmp = j * j * j * j) <= i; ++j) 
 			if (square[i - tmp]) {
 				++sum[i];
 				break;
 			}
-		}
 	}
 }
 
