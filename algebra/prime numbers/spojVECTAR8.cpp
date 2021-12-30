@@ -133,9 +133,6 @@ void init() {
 }
 
 int main() {
-	// freopen("/home/drac/Documents/CP/input.txt", "r", stdin);
- //    setbuf(stdout, NULL);
- //    freopen("/home/drac/Documents/CP/output.txt", "w", stdout);
     int n, q; scan(n);
     init();
     while (n--) scan(q), cout << num[q], nl;
