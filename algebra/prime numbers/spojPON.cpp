@@ -125,7 +125,7 @@ bool check_comp(ull& n, ull& a, ull& d, int& s) {
 	/*
 		Miller-Rabin
 		suppose n is odd, then n - 1 = 2^s * d with d being odd.
-		given 1 < a < n, by FLT,
+		given 1 < a < n - 1 (since coprimes automatically satisfy FLT), by FLT,
 		     a^(n - 1) = a^(2^s * d) = 1 (mod n) => a^(2^s * d) - 1 = 0 (mod n)
 							 => (a^(2^(s - 1) * d) + 1) * (a^(2^(s - 1) * d) - 1) = 0 (mod n)
 							 => (a^(2^(s - 1) * d) + 1) * (a^(2^(s - 2) * d) + 1) ... (a^d + 1) * (a^d - 1) = 0 (mod n)
