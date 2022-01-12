@@ -122,9 +122,20 @@ ull binp(ull& x, ull& y, ull& mod) {
 }
 
 bool check_comp(ull& n, ull& a, ull& d, int& s) {
+	/*
+		Miller-Rabin
+		suppose n is odd, then n - 1 = 2^s * d with d being odd.
+		given 1 < a < n, by FLT,
+			a^(n - 1) = a^(2^s * d) = 1 (mod n) => a^(2^s * d) - 1 = 0 (mod n)
+							    => (a^(2^(s - 1) * d) + 1) * (a^(2^(s - 1) * d) - 1) = 0 (mod n)
+							    => (a^(2^(s - 1) * d) + 1) * (a^(2^(s - 2) * d) + 1) ... (a^d + 1) * (a^d - 1) = 0 (mod n)
+		∴ two possible solutions exist
+			(1) a^d = 1 (mod n)
+			(2) a^(2^r * d) = -1 (mod n) ∀r ∈ {0, s - 1}. However, since a, n > 0, ∴ -1 needs to plus n to get the positive remainder before -1
+	*/
 	ull x = binp(a, d, n);
-	if (x == 1 || x == n - 1) return 0;
-	F(i, 1, s) {
+	if (x == 1 || x == n - 1) return 0; // case when n is even
+	F(i, 1, s) {			    // solution (2)
 		x = (u128)x * x % n;
 		if (x == n - 1) return 0;
 	}
@@ -135,8 +146,8 @@ bool MR(ull& n) {
 	if (n < 2) return 0;
 	int r = 0;
 	ull d = n - 1;
-	while (!(d & 1)) d >>= 1, ++r;
-	for (ull a : {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37}) {
+	while (!(d & 1)) d >>= 1, ++r;	   // retrieve odd d
+	for (ull a : {2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37}) {	// first 12 prime bases are enough for checking the primality of any 64-bit integer
 		if (n == a) return 1;
 		if (check_comp(n, a, d, r)) return 0;
 	}
