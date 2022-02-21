@@ -116,7 +116,6 @@ node* newnode(int val = -1) {
 
 vector<ll> phi(1000001), sum(1000001, 1);
 
-
 void init() {
 	phi[1] = 1;
 	F(i, 2, 1000001) phi[i] = i;
