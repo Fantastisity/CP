@@ -122,7 +122,7 @@ void init() {
 	F(i, 2, 1000001) if (phi[i] == i) for (int j = i; j < 1000001; j += i) phi[j] -= phi[j] / i;
 	/*
 		Σi lcm(n, i) = n * Σi i / gcd(n, i) = n * Σi i / d [1]
-		since d = i / x, thus [1] can be re-written as n * Σ x [2]
+		since d = i / x, [1] can thus be re-written as n * Σ x [2]
 		furthermore, because n / d ⊥ i / d = n / d ⊥ x, [2] is then 
 			n * Σ coprime of (n / d) = n * Σg|n Σ coprime of g [3]
 		let S = {m <= n; m ⊥ n}, also due to gcd(a, b) = gcd(a % b, b), hence 
