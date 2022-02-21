@@ -125,7 +125,7 @@ void init() {
 		since d = i / x, [1] can thus be re-written as n * Σ x [2]
 		furthermore, because n / d ⊥ i / d = n / d ⊥ x, [2] is then 
 			n * Σ coprime of (n / d) = n * Σg|n Σ coprime of g [3]
-		let S = {m <= n; m ⊥ n}, also due to gcd(a, b) = gcd(a % b, b), hence 
+		let S = {m <= n; m ⊥ n}, also due to gcd(a, b) = gcd(a % b, b), thereby 
 			Σ coprime of g = 1/2 * (Σi∈S i + Σi∈S g - i)
 				       = 1/2 * Σi∈S g
 				       = g * Φ(g) / 2
