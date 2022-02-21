@@ -48,7 +48,7 @@ void dbg(args... arg) {
 #define initd(d) memset(d, 0, sizeof(d))
 #define loc(v, ele) lower_bound(v.cbegin(), v.cend(), ele) - v.cbegin()
 #define qnav do { \
-	freopen("/home/drac/Documents/CP/input.txt", "r", stdin); \
+    freopen("/home/drac/Documents/CP/input.txt", "r", stdin); \
     setbuf(stdout, NULL); \
     freopen("/home/drac/Documents/CP/output.txt", "w", stdout); \
 } while (0)
