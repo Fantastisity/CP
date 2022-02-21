@@ -129,7 +129,7 @@ void init() {
 			Σ coprime of g = 1/2 * (Σi∈S i + Σi∈S g - i)
 				       = 1/2 * Σi∈S g
 				       = g * Φ(g) / 2
-		therefore [3] is equivalent to n * Σg|n g * Φ(g) / 2
+		hence, [3] is equivalent to n * Σg|n g * Φ(g) / 2
 	*/
 	F(i, 2, 1000001) for (int j = i; j < 1000001; j += i) sum[j] += phi[i] * i / 2;
 }
