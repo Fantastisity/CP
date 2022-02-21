@@ -120,6 +120,12 @@ void init() {
 	phi[1] = 1;
 	F(i, 2, 1000001) phi[i] = i;
 	F(i, 2, 1000001) if (phi[i] == i) for (int j = i; j < 1000001; j += i) phi[j] -= phi[j] / i;
+	/*
+		Σi lcm(n, i) = n * Σi i / gcd(n, i) = n * Σi i / d [1]
+		since d = i / x, thus [1] can be re-written as n * Σ x [2]
+		furthermore, because n / d ⊥ i / d = n / d ⊥ x, [2] is then n * Σ coprime of (n / d) [3]
+		
+	*/
 	F(i, 2, 1000001) for (int j = i; j < 1000001; j += i) sum[j] += phi[i] * i / 2;
 }
 
