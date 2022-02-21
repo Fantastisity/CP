@@ -124,7 +124,7 @@ void init() {
 }
 
 int main() {
-    qnav;
+    //qnav;
     int n, m; scan(n);
     init();
     while (n--) {
