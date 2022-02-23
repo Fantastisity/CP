@@ -124,7 +124,7 @@ void init() {
 	F(i, 1, 1000001) phi[i] = i;
 	F(i, 2, 1000001) if (phi[i] == i) for (int j = i; j < 1000001; j += i) phi[j] -= phi[j] / i;
 	F(i, 1, 1000001) for (int j = i << 1; j < 1000001; j += i) sum[j] += i * phi[j / i];
-    F(i, 1, 1000001) sum[i] += sum[i - 1];
+    	F(i, 1, 1000001) sum[i] += sum[i - 1];
 }
 
 int main() {
