@@ -128,6 +128,7 @@ void init() {
 }
 
 int main() {
+    //qnav;
     init();
     int n;
     while (scan(n) && n) cout << sum[n], nl;
