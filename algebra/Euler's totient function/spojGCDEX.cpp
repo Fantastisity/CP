@@ -116,7 +116,6 @@ node* newnode(int val = -1) {
 
 ll phi[1000001], sum[1000001];
 
-
 void init() {
     /*
          ∀m∈[1, n] (Σi∈[1, m] gcd(i, m)) - m = (Σi∈[1, m] Σd|m d * [gcd(i/d, m/d) = 1]) - m  (note: minus m because i goes to n - 1)
