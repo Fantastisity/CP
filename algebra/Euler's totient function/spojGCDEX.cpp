@@ -119,7 +119,8 @@ ll phi[1000001], sum[1000001];
 
 void init() {
     /*
-        
+         Σi∈[1,n] gcd(i, n) = Σi∈[1,n] Σd|n d * [gcd(i/d, n/d) = 1]
+	 		    = Σi∈[1,n] Σd|n d * Φ(n/d)
     */
 	F(i, 1, 1000001) phi[i] = i;
 	F(i, 2, 1000001) if (phi[i] == i) for (int j = i; j < 1000001; j += i) phi[j] -= phi[j] / i;
