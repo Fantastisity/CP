@@ -130,7 +130,7 @@ void init() {
     */
 	F(i, 2, MAXN) phi[i] = i;
 	F(i, 2, MAXN) if (phi[i] == i) for (int j = i; j < MAXN; j += i) phi[j] -= phi[j] / i;
-        F(i, 1, MAXN) phi[i] += phi[i - 1];
+        F(i, 3, MAXN) phi[i] += phi[i - 1];
 }
 
 int main() {
