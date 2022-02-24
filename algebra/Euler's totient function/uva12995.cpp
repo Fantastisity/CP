@@ -123,9 +123,10 @@ void init() {
         F3 = F2 + ϕ(3)
 
         the logic here is that, when going from Fn-1 to Fn, there are at most
-        ϕ(n) extra fractions, since other fractions will have numerators | n, which
-        further reduce to some existing fractions. Thus, the total number of sequences
-        is Σi∈[2, n] ϕ(i)
+        ϕ(n) extra fractions inserted, since other fractions will have numerators | n, which
+        further reduce to some existing fractions. In addition, those inserted fractions
+	separate the consecutive pairs in Fn-1, thus creating ϕ(n) farey sequences. Hence,
+	the total number of farey sequences is Σi∈[2, n] ϕ(i)
     */
 	F(i, 2, MAXN) phi[i] = i;
 	F(i, 2, MAXN) if (phi[i] == i) for (int j = i; j < MAXN; j += i) phi[j] -= phi[j] / i;
