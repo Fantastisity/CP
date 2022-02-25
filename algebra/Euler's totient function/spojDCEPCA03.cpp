@@ -48,7 +48,7 @@ void dbg(args... arg) {
 #define initd(d) memset(d, 0, sizeof(d))
 #define loc(v, ele) lower_bound(v.cbegin(), v.cend(), ele) - v.cbegin()
 #define qnav do { \
-	freopen("/home/drac/Documents/CP/input.txt", "r", stdin); \
+    freopen("/home/drac/Documents/CP/input.txt", "r", stdin); \
     setbuf(stdout, NULL); \
     freopen("/home/drac/Documents/CP/output.txt", "w", stdout); \
 } while (0)
@@ -118,17 +118,11 @@ ll phi[MAXN], sum[MAXN];
 
 void init() {
     F(i, 1, MAXN) phi[i] = i;
-    F(i, 2, MAXN) {
-        if (phi[i] == i) {
-            for (int j = i; j < MAXN; j += i) phi[j] -= phi[j] / i;
-        }
-    }
+    F(i, 2, MAXN) if (phi[i] == i) for (int j = i; j < MAXN; j += i) phi[j] -= phi[j] / i; 
     F(i, 1, MAXN) {
         sum[i] *= 2;
         sum[i] += sum[i - 1];
-        F(j, i, MAXN) {
-            sum[j] += phi[i] * phi[j];
-        }
+        F(j, i, MAXN) sum[j] += phi[i] * phi[j];
     }
 }
 
