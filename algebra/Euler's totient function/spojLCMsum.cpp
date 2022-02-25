@@ -53,7 +53,7 @@ void dbg(args... arg) {
     freopen("/home/drac/Documents/CP/output.txt", "w", stdout); \
 } while (0)
 
-const int MAXN = 10000;
+const int MAXN = 1000001;
 const int MOD = 1000000007;
 
 #ifdef CUST_PAIR
@@ -114,12 +114,12 @@ node* newnode(int val = -1) {
 }
 #endif
 
-vector<ll> phi(1000001), sum(1000001, 1);
+vector<ll> phi(MAXN), sum(MAXN, 1);
 
 void init() {
 	phi[1] = 1;
-	F(i, 2, 1000001) phi[i] = i;
-	F(i, 2, 1000001) if (phi[i] == i) for (int j = i; j < 1000001; j += i) phi[j] -= phi[j] / i;
+	F(i, 2, MAXN) phi[i] = i;
+	F(i, 2, MAXN) if (phi[i] == i) for (int j = i; j < MAXN; j += i) phi[j] -= phi[j] / i;
 	/*
 		Σi lcm(n, i) = n * Σi i / gcd(n, i) = n * Σi i / d [1]
 		since d = i / x, [1] can thus be re-written as n * Σ x [2]
@@ -131,7 +131,7 @@ void init() {
 				       = g * Φ(g) / 2
 		hence, [3] is equivalent to n * Σg|n g * Φ(g) / 2
 	*/
-	F(i, 2, 1000001) for (int j = i; j < 1000001; j += i) sum[j] += phi[i] * i / 2;
+	F(i, 2, MAXN) for (int j = i; j < MAXN; j += i) sum[j] += phi[i] * i / 2;
 }
 
 int main() {
