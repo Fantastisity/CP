@@ -53,7 +53,7 @@ void dbg(args... arg) {
     freopen("/home/drac/Documents/CP/output.txt", "w", stdout); \
 } while (0)
 
-const int MAXN = 10000;
+const int MAXN = 2000001;
 const int MOD = 1000000007;
 
 #ifdef CUST_PAIR
@@ -114,15 +114,15 @@ node* newnode(int val = -1) {
 }
 #endif
 
-vector<ll> phi(2000001), dp(2000001, 1), res(2000001);
+vector<ll> phi(MAXN), dp(MAXN, 1), res(MAXN);
 
 void init() {
 	phi[1] = 1;
 	dp[0] = dp[1] = 0;
-	for (int i = 2; i < 2000001; ++i) phi[i] = i;
-	for (int i = 2; i < 2000001; ++i) {
+	for (int i = 2; i < MAXN; ++i) phi[i] = i;
+	for (int i = 2; i < MAXN; ++i) {
 		if (phi[i] == i) 
-			for (int j = i; j < 2000001; j += i) phi[j] -= phi[j] / i;
+			for (int j = i; j < MAXN; j += i) phi[j] -= phi[j] / i;
 		dp[i] += dp[phi[i]];
 		res[i] = dp[i] + res[i - 1];
 	}
