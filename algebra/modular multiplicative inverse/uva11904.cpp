@@ -157,7 +157,7 @@ int main() {
     		prefix += k;
     		res = res * ncr(prefix - 1, k - 1) % MOD;
     	}
-    	cout << "Case " << c << ": " << res << endl;
+    	cout << "Case " << c << ": " << res, nl;
     }
     return 0;
 }
