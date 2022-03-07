@@ -48,7 +48,7 @@ void dbg(args... arg) {
 #define initd(d) memset(d, 0, sizeof(d))
 #define loc(v, ele) lower_bound(v.cbegin(), v.cend(), ele) - v.cbegin()
 #define qnav do { \
-	freopen("/home/drac/Documents/CP/input.txt", "r", stdin); \
+    freopen("/home/drac/Documents/CP/input.txt", "r", stdin); \
     setbuf(stdout, NULL); \
     freopen("/home/drac/Documents/CP/output.txt", "w", stdout); \
 } while (0)
@@ -148,8 +148,9 @@ int main() {
     	scan(t);
     	ll res = 1, prefix, k; scan(prefix);
     	/*
-			given that last job must finish at last, thus the last time slot is fixed.
-			Hence the problem reduces to finding ∏i∈[1,n] C(k1 + ... + ki - 1, ki - 1)
+		given that last job must finish at last, thus the last time slot is fixed.
+		Hence the problem reduces to finding 
+			C(k1 - 1, k1 - 1) * ∏i∈[2,n] C(k1 + ... + ki - 1, ki - 1)
     	*/ 
     	for (int i = 1; i < t; ++i) {
     		scan(k);
