@@ -115,8 +115,6 @@ node* newnode(int val = -1) {
 }
 #endif
 
-ll n, k, y[MAXN];
-
 ll binp(ll x, ll y) {
 	x %= MOD;
 	x = trans(x, MOD);
