@@ -49,7 +49,7 @@ void dbg(args... arg) {
 #define initd(d) memset(d, 0, sizeof(d))
 #define loc(v, ele) lower_bound(v.cbegin(), v.cend(), ele) - v.cbegin()
 #define qnav do { \
-	freopen("/home/drac/Documents/CP/input.txt", "r", stdin); \
+    freopen("/home/drac/Documents/CP/input.txt", "r", stdin); \
     setbuf(stdout, NULL); \
     freopen("/home/drac/Documents/CP/output.txt", "w", stdout); \
 } while (0)
@@ -136,15 +136,20 @@ ll inv(ll a) {
 int main() {
     //qnav;
     ll n, k, div = 1, sum = 0; scan(n), scan(k);
-
+    /*
+    	Lagrange interpolation -- from the 3 examples given, a noticeable pattern
+	is that the sum of kth power is an (k + 1)th polynomial, which needs a minimum
+	of (k + 2) points to construct
+		f(x) = Σi∈[1,k+2] yi ∏j≠i (x - xj / xi - xj)
+    */
     FE(i, 1, k + 2)  {
-    	y[i] = (y[i - 1] + binp(i, k)) % MOD;
+    	y[i] = (y[i - 1] + binp(i, k)) % MOD; // yi = Σl∈[1,i] pwr(xi, k)
     	if (i > n) break;
     }
 
     if (n <= k + 2) return dbg(y[n]), 0;
 
-    FE(i, 2, k + 2) {
+    FE(i, 2, k + 2) { // i = 1
     	div = div * (n - i) % MOD;
     	div = div * inv(1 - i) % MOD;
     }
@@ -152,6 +157,11 @@ int main() {
     FE(i, 1, k + 2) {
     	sum = (sum + y[i] * div) % MOD;
     	if (i == k + 2) break;
+	/* 
+		i > 1: 
+			numer(i) = numer(i - 1) * (n - i) / (n - (i + 1))
+			denom(i) = denom(i - 1) * i / (i - (k + 2))
+	*/
     	div = div * inv(n - i - 1) % MOD * (n - i) % MOD;
     	div = div * trans(i - k - 2, MOD) % MOD * inv(i) % MOD;
     }
