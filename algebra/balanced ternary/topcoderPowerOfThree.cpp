@@ -140,12 +140,12 @@ void compute(ll val) {
 }
 
 int main() {
-	qnav;
-	ll x, y;
-	scan2(x, y);
-	if (x == y || x == -y) {
-		if (!x && !y) printf("Possible\n");
-		else printf("Impossible\n");
-	} else compute(x + y);
+    qnav;
+    ll x, y;
+    scan2(x, y);
+    if (x == y || x == -y) {
+	if (!x && !y) printf("Possible\n");
+	else printf("Impossible\n");
+    } else compute(x + y);
     return 0;
 }
