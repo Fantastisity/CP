@@ -145,7 +145,7 @@ int main() {
     scan2(m, n);
     for (int i = 0; i < (1 << m); ++i) {
     	for (int j = 0; j < (1 << n); ++j) 
-    		printf("%d\t", (i ^ i >> 1) << m | (j ^ j >> 1));
+    		printf("%d\t", (i ^ i >> 1) << n | (j ^ j >> 1));
 	nl;
     }
     return 0;
