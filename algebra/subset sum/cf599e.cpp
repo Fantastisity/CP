@@ -188,9 +188,9 @@ ll solve(int root, int mask) {
 					++cnt, new_root = i; // case 3
 			if (cnt > 1) continue;
 		}
-		if (cnt) // if only one node connecting with root, then it must be the root of current subtree
+		if (cnt) // if only one node connecting with root, then it must be the root of the current subtree
 			dp[root][mask] += solve(new_root, s) * solve(root, cbit(mask, s));
-		else // if no nodes connecting with root, then use nodes the current subtree as new roots
+		else // if no nodes connecting with root, then use nodes of the current subtree as new roots
 			for (new_root = 0; new_root < n; ++new_root) 
 				if (isBitSet(s, new_root)) 
 					dp[root][mask] += solve(new_root, s) * solve(root, cbit(mask, s));
