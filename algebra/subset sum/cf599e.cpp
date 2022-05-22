@@ -199,7 +199,6 @@ ll solve(int root, int mask) {
 }
 
 int main() {
-    //qnav;
     int mask;
     scan3(n, m, q);
     mask = (1 << n) - 1;
